@@ -12,6 +12,7 @@ php:
 mysql:
   database: drupal
   username: root
+  password: root
   encoding: utf8
 
 env:
