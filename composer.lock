@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "43a3494b82664f25905445350def6bd5",
-    "content-hash": "62e653d3c770c193414ac821a0e8f4b6",
+    "hash": "0686df3fd6b6d1b21eb496ba3f28f281",
+    "content-hash": "c8b683198b8c56d16e8c52494113818a",
     "packages": [
         {
             "name": "cweagans/composer-patches",
@@ -387,6 +387,37 @@
             },
             "notification-url": "http://packagist.drupal-composer.org/downloads/",
             "description": "Enables modules to work with any entity type and to provide entities."
+        },
+        {
+            "name": "drupal/entityreference",
+            "version": "7.1.1",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/entityreference",
+                "reference": "92747d9391443fb653a0044d9926e04402293f9a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/entityreference-7.x-1.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ctools": "7.*",
+                "drupal/drupal": "7.*",
+                "drupal/entity": "7.*"
+            },
+            "replace": {
+                "drupal/entityreference_behavior_example": "self.version"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Provides a field that can reference other entities."
         },
         {
             "name": "drupal/features",

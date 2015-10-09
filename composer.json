@@ -95,7 +95,8 @@
         "drupal/flag": "7.*",
         "drupal/features": "7.*",
         "drupal/field_group": "7.*",
-        "drupal/field_collection": "7.*"
+        "drupal/field_collection": "7.*",
+        "drupal/entityreference": "7.*"
     },
     "require-dev": {
         "pantheon-systems/travis-scripts": "*"
