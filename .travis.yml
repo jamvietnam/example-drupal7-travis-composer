@@ -20,7 +20,7 @@ env:
     - SITE_NAME='Maggi Vietnam Build CI'
 
     # Your Pantheon site's idenfying name (i.e. as shown on the dashboard)
-    - PSITE='maggi_build_ci'
+    - PSITE='maggi-build-ci'
 
     # The Pantheon environment to push to after tests succeed.
     # DANGER: This environment will be switched from 'sftp' mode to 'git' mode
