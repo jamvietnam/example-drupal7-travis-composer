@@ -82,7 +82,20 @@
         "drupal/admin_menu": "7.3.*",
         "drupal/devel": "7.1.*",
         "drupal/responsive_bartik": "7.1.*",
-        "drupal/bootstrap": "7.*"
+        "drupal/bootstrap": "7.*",
+        "drupal/backup_migrate": "7.*",
+        "drupal/token": "7.*",
+        "drupal/pathauto": "7.*",
+        "drupal/ckeditor": "7.*",
+        "drupal/jquery_update": "7.*",
+        "drupal/module_filter": "7.*",
+        "drupal/fences": "7.*",
+        "drupal/ctools": "7.*",
+        "drupal/views": "7.*",
+        "drupal/flag": "7.*",
+        "drupal/features": "7.*",
+        "drupal/field_group": "7.*",
+        "drupal/field_collection": "7.*"
     },
     "require-dev": {
         "pantheon-systems/travis-scripts": "*"
