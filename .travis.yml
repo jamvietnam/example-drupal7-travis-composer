@@ -17,10 +17,10 @@ mysql:
 env:
   global:
     # Your site's name -- used in `drush site-install`.
-    - SITE_NAME='Maggi Vietnam Build CI'
+    - SITE_NAME='Maggi Vietnam'
 
     # Your Pantheon site's idenfying name (i.e. as shown on the dashboard)
-    - PSITE='maggi-build-ci'
+    - PSITE='maggi-travis-ci'
 
     # The Pantheon environment to push to after tests succeed.
     # DANGER: This environment will be switched from 'sftp' mode to 'git' mode
