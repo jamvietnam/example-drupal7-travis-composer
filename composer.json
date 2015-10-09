@@ -81,7 +81,8 @@
         "pantheon-systems/drops-7": "7.*",
         "drupal/admin_menu": "7.3.*",
         "drupal/devel": "7.1.*",
-        "drupal/responsive_bartik": "7.1.*"
+        "drupal/responsive_bartik": "7.1.*",
+        "drupal/bootstrap": "7.*"
     },
     "require-dev": {
         "pantheon-systems/travis-scripts": "*"

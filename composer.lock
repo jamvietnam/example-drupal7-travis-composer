@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "7e67ebac30400d78ec5b570d940d2d11",
-    "content-hash": "3477bdc5082b4579d4a09d8ab9e2dff3",
+    "hash": "783ce30a54004896de6ba78cc3e31172",
+    "content-hash": "408f8f4c2c3066c46d3dadd17ac40739",
     "packages": [
         {
             "name": "cweagans/composer-patches",
@@ -175,6 +175,32 @@
             "notification-url": "http://packagist.drupal-composer.org/downloads/",
             "description": "Provides a dropdown menu to most administrative tasks and other common destinations (to users with the proper permissions).",
             "homepage": "https://www.drupal.org/project/admin_menu"
+        },
+        {
+            "name": "drupal/bootstrap",
+            "version": "7.3.0",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/bootstrap",
+                "reference": "d1067c5f5645bdbbbf7a4ad95f16f937630bd965"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/bootstrap-7.x-3.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-3.x": "7.3.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Built to use Bootstrap, a sleek, intuitive, and powerful front-end framework for faster and easier web development."
         },
         {
             "name": "drupal/composer_vendor",
