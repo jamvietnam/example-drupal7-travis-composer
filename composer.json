@@ -1,5 +1,5 @@
 {
-    "name": "pantheon-systems/example-drupal7-travis-composer",
+    "name": "jamdigital/drupal-provision-travis-pantheon",
     "description": "Template for creating a project to manage a Drupal site with Composer, and test with Travis CI.  Use `composer create-project` to make your own project, or, if you prefer to clone the git repository, run `composer install` followed by `bin/init-new-project` to replace this file and set up your starting project.",
     "repositories": [
         {
@@ -96,7 +96,11 @@
         "drupal/features": "7.*",
         "drupal/field_group": "7.*",
         "drupal/field_collection": "7.*",
-        "drupal/entityreference": "7.*"
+        "drupal/entityreference": "7.*",
+        "drupal/tweme": "7.3.x-dev",
+        "drupal/kalatheme": "7.4.x-dev",
+        "drupal/panels": "7.*",
+        "drupal/panopoly_theme": "7.x"
     },
     "require-dev": {
         "pantheon-systems/travis-scripts": "*"
