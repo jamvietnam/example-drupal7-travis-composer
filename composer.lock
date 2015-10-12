@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c263b796b00b30b4b64a37f627e37d02",
-    "content-hash": "3aea6cc69b21204c6ac7be2ddfde67ed",
+    "hash": "987a92b14e79492431ce64a549812415",
+    "content-hash": "958bbff01fa39f39dd3c3166e7d9008a",
     "packages": [
         {
             "name": "cweagans/composer-patches",
@@ -177,6 +177,35 @@
             "homepage": "https://www.drupal.org/project/admin_menu"
         },
         {
+            "name": "drupal/admin_views",
+            "version": "7.1.5",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/admin_views",
+                "reference": "44098bb9da5447765da02bd7b3bc974661acc5e4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/admin_views-7.x-1.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*",
+                "drupal/views": "7.*",
+                "drupal/views_bulk_operations": ">=7.3.2"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Replaces all system object management pages in Drupal core with real views.",
+            "homepage": "https://www.drupal.org/project/admin_views"
+        },
+        {
             "name": "drupal/backup_migrate",
             "version": "7.3.1",
             "source": {
@@ -227,6 +256,32 @@
             },
             "notification-url": "http://packagist.drupal-composer.org/downloads/",
             "description": "Built to use Bootstrap, a sleek, intuitive, and powerful front-end framework for faster and easier web development."
+        },
+        {
+            "name": "drupal/caption_filter",
+            "version": "7.1.2",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/caption_filter",
+                "reference": "1132e29d60396374a5425c9752714c2208729e52"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/caption_filter-7.x-1.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Filter to parse [caption] tags and allow image alignment."
         },
         {
             "name": "drupal/ckeditor",
@@ -327,6 +382,82 @@
             "homepage": "https://www.drupal.org/project/ctools"
         },
         {
+            "name": "drupal/date",
+            "version": "7.2.9",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/date",
+                "reference": "e37620a69f76354a7f87dff47ed4010da891d105"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/date-7.x-2.9.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*"
+            },
+            "replace": {
+                "drupal/date_all_day": "self.version",
+                "drupal/date_api": "self.version",
+                "drupal/date_context": "self.version",
+                "drupal/date_migrate": "self.version",
+                "drupal/date_migrate_example": "self.version",
+                "drupal/date_popup": "self.version",
+                "drupal/date_repeat": "self.version",
+                "drupal/date_repeat_field": "self.version",
+                "drupal/date_tools": "self.version",
+                "drupal/date_views": "self.version"
+            },
+            "suggest": {
+                "drupal/context": "Required by drupal/date_context",
+                "drupal/date_api": "Required by drupal/date_all_day, drupal/date_popup, drupal/date_repeat, drupal/date_repeat_field, drupal/date_views",
+                "drupal/date_repeat": "Required by drupal/date_migrate_example, drupal/date_repeat_field",
+                "drupal/date_repeat_field": "Required by drupal/date_migrate_example",
+                "drupal/features": "Required by drupal/date_migrate_example",
+                "drupal/migrate": "Required by drupal/date_migrate_example",
+                "drupal/views": "Required by drupal/date_views"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-2.x": "7.2.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Makes date/time fields available.",
+            "homepage": "https://www.drupal.org/project/date"
+        },
+        {
+            "name": "drupal/defaultconfig",
+            "version": "7.1.0-alpha11",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/defaultconfig",
+                "reference": "6314345d801ca0cbb3cdd9ca3e36f6a1a83ec196"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/defaultconfig-7.x-1.0-alpha11.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*",
+                "drupal/features": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Use features as default configuration without having to deal with overridden features.",
+            "homepage": "https://www.drupal.org/project/defaultconfig"
+        },
+        {
             "name": "drupal/devel",
             "version": "7.1.5",
             "source": {
@@ -418,6 +549,64 @@
             },
             "notification-url": "http://packagist.drupal-composer.org/downloads/",
             "description": "Provides a field that can reference other entities."
+        },
+        {
+            "name": "drupal/facetapi",
+            "version": "7.1.5",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/facetapi",
+                "reference": "316b904312d3eb5480b060801e5ccf7827208977"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/facetapi-7.x-1.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ctools": "7.*",
+                "drupal/drupal": "7.*"
+            },
+            "replace": {
+                "drupal/current_search": "self.version"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "An abstracted facet API that can be used by various search backends."
+        },
+        {
+            "name": "drupal/fape",
+            "version": "7.1.2",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/fape",
+                "reference": "b3a41d6029cdb72cfa8903c652a120c4c28798fc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/fape-7.x-1.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ctools": ">=7.1.4",
+                "drupal/drupal": "7.*",
+                "drupal/entity": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Adds a contextual link to Field API Panel Panes to edit that field value."
         },
         {
             "name": "drupal/features",
@@ -530,6 +719,67 @@
             "description": "Provides the ability to group your fields on both form and display."
         },
         {
+            "name": "drupal/fieldable_panels_panes",
+            "version": "7.1.7",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/fieldable_panels_panes",
+                "reference": "b0afc9d2a770c2b38a9c5a8aad2f0ad93a109266"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/fieldable_panels_panes-7.x-1.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ctools": ">=7.1.8",
+                "drupal/drupal": "7.*",
+                "drupal/panels": ">=7.3.5",
+                "drupal/views": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Allow the creation of fieldable panels pane entities.",
+            "homepage": "https://www.drupal.org/project/fieldable_panels_panes"
+        },
+        {
+            "name": "drupal/file_entity",
+            "version": "7.2.0-beta2",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/file_entity",
+                "reference": "812dc896a258837017166fdd8d2fb381c0433001"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/file_entity-7.x-2.0-beta2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ctools": "7.*",
+                "drupal/drupal": "7.*",
+                "drupal/field": "7.*",
+                "drupal/file": "7.*",
+                "drupal/system": ">=7.9.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-2.x": "7.2.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Extends Drupal file entities to be fieldable and viewable.",
+            "homepage": "https://www.drupal.org/project/file_entity"
+        },
+        {
             "name": "drupal/flag",
             "version": "7.3.6",
             "source": {
@@ -558,6 +808,33 @@
             },
             "notification-url": "http://packagist.drupal-composer.org/downloads/",
             "description": "Create customized flags that users can set on entities."
+        },
+        {
+            "name": "drupal/image_resize_filter",
+            "version": "7.1.16",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/image_resize_filter",
+                "reference": "fcea35baa68d6a4b36d53b195a1e1b5bb67e4e9e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/image_resize_filter-7.x-1.16.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Filter to automatically scale images to their height and width dimensions.",
+            "homepage": "https://www.drupal.org/project/image_resize_filter"
         },
         {
             "name": "drupal/jquery_update",
@@ -611,7 +888,248 @@
             },
             "notification-url": "http://packagist.drupal-composer.org/downloads/",
             "description": "A flexible, responsive, lightweight and mobile-first theme built on Panopoly and powered by Twitter Bootstrap.",
-            "homepage": "https://www.drupal.org/project/kalatheme"
+            "homepage": "https://www.drupal.org/project/kalatheme",
+            "time": "2015-06-11 17:50:27"
+        },
+        {
+            "name": "drupal/libraries",
+            "version": "7.2.2",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/libraries",
+                "reference": "744cd04d1c78a08d10b511f67904f0839baf94ec"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/libraries-7.x-2.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*",
+                "drupal/system": ">=7.11.0"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-2.x": "7.2.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Allows version-dependent and shared usage of external libraries."
+        },
+        {
+            "name": "drupal/link",
+            "version": "7.1.3",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/link",
+                "reference": "7170806a07386c1619ceadcfc4b6018d20982e4d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/link-7.x-1.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Defines simple link field types."
+        },
+        {
+            "name": "drupal/linkit",
+            "version": "7.3.4",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/linkit",
+                "reference": "1e79e4a1aa978d843ef7d3581d44ac733a56b65c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/linkit-7.x-3.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ctools": "7.*",
+                "drupal/drupal": "7.*",
+                "drupal/entity": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-3.x": "7.3.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Provides an easy interface for inserting links.",
+            "homepage": "https://www.drupal.org/project/linkit"
+        },
+        {
+            "name": "drupal/manualcrop",
+            "version": "7.1.5",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/manualcrop",
+                "reference": "4c551739a55682c0a951fcb5f64c2082b496f541"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/manualcrop-7.x-1.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*",
+                "drupal/image": ">=7.8.0",
+                "drupal/libraries": ">=7.2.1"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Lets you manually crop an image based upon the image style effects."
+        },
+        {
+            "name": "drupal/media",
+            "version": "7.2.0-beta1",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/media",
+                "reference": "19a155b1a78f18355dc9a2a614524178816be2cc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/media-7.x-2.0-beta1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*",
+                "drupal/file_entity": "7.*",
+                "drupal/image": "7.*",
+                "drupal/views": "7.*"
+            },
+            "replace": {
+                "drupal/media_bulk_upload": "self.version",
+                "drupal/media_internet": "self.version",
+                "drupal/media_migrate_file_types": "self.version",
+                "drupal/media_wysiwyg": "self.version",
+                "drupal/media_wysiwyg_view_mode": "self.version",
+                "drupal/mediafield": "self.version"
+            },
+            "suggest": {
+                "drupal/media_wysiwyg": "Required by drupal/media_wysiwyg_view_mode",
+                "drupal/multiform": "Required by drupal/media_bulk_upload",
+                "drupal/plupload": "Required by drupal/media_bulk_upload"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-2.x": "7.2.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Provides the core Media API",
+            "homepage": "https://www.drupal.org/project/media"
+        },
+        {
+            "name": "drupal/media_vimeo",
+            "version": "7.2.1",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/media_vimeo",
+                "reference": "eeb5553acc05b3e14283eb90403eb4ec1d21839f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/media_vimeo-7.x-2.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*",
+                "drupal/media_internet": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-2.x": "7.2.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Adds Vimeo as a supported media provider.",
+            "homepage": "https://www.drupal.org/project/media_vimeo"
+        },
+        {
+            "name": "drupal/media_youtube",
+            "version": "7.3.0",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/media_youtube",
+                "reference": "becde4a1f17f63a7db5a5887af1290e7228a014c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/media_youtube-7.x-3.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*",
+                "drupal/media_internet": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-3.x": "7.3.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Adds YouTube as a supported media provider.",
+            "homepage": "https://www.drupal.org/project/media_youtube"
+        },
+        {
+            "name": "drupal/menu_block",
+            "version": "7.2.7",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/menu_block",
+                "reference": "8f80ce036db1108e2abe7398f407e0087f2b5d83"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/menu_block-7.x-2.7.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*",
+                "drupal/menu": ">7.11.0"
+            },
+            "replace": {
+                "drupal/menu_block_export": "self.version"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-2.x": "7.2.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Provides configurable blocks of menu items.",
+            "homepage": "https://www.drupal.org/project/menu_block"
         },
         {
             "name": "drupal/module_filter",
@@ -638,6 +1156,35 @@
             },
             "notification-url": "http://packagist.drupal-composer.org/downloads/",
             "description": "Filter the modules list."
+        },
+        {
+            "name": "drupal/panelizer",
+            "version": "7.3.1",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/panelizer",
+                "reference": "c28bd610f836f26ec5f9c96b10297a9d528fd844"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/panelizer-7.x-3.1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ctools": "7.*",
+                "drupal/drupal": "7.*",
+                "drupal/page_manager": "7.*",
+                "drupal/panels": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-3.x": "7.3.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Allow any node type to have custom panel displays, similar to the panel node type."
         },
         {
             "name": "drupal/panels",
@@ -679,6 +1226,275 @@
             "homepage": "https://www.drupal.org/project/panels"
         },
         {
+            "name": "drupal/panels_breadcrumbs",
+            "version": "7.2.2",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/panels_breadcrumbs",
+                "reference": "0d48b77e284379b163d59e1170966e3b8a874c67"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/panels_breadcrumbs-7.x-2.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ctools": "7.*",
+                "drupal/drupal": "7.*",
+                "drupal/page_manager": "7.*",
+                "drupal/panels": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-2.x": "7.2.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Adds the ability to set breadcrumbs directly from Panels and takes advantage of arguments and contexts as placeholder tokens"
+        },
+        {
+            "name": "drupal/panopoly_admin",
+            "version": "7.1.27",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/panopoly_admin",
+                "reference": "2823a1f05e23d9334e22d81f90387a5bb4d0c425"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/panopoly_admin-7.x-1.27.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/admin_views": "7.*",
+                "drupal/ctools": "7.*",
+                "drupal/defaultconfig": "7.*",
+                "drupal/drupal": "7.*",
+                "drupal/features": "7.*",
+                "drupal/jquery_update": "7.*",
+                "drupal/page_manager": "7.*",
+                "drupal/radix_layouts": "7.*",
+                "drupal/strongarm": "7.*",
+                "drupal/views_bulk_operations": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Administrative dashboard and related editing interfaces.",
+            "homepage": "https://www.drupal.org/project/panopoly_admin"
+        },
+        {
+            "name": "drupal/panopoly_core",
+            "version": "7.1.27",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/panopoly_core",
+                "reference": "d8be8f7d231314d37adadeeaa34c6f43ca7f156f"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/panopoly_core-7.x-1.27.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ctools": "7.*",
+                "drupal/date": "7.*",
+                "drupal/date_api": "7.*",
+                "drupal/date_popup": "7.*",
+                "drupal/date_views": "7.*",
+                "drupal/defaultconfig": "7.*",
+                "drupal/drupal": "7.*",
+                "drupal/entity": "7.*",
+                "drupal/entityreference": "7.*",
+                "drupal/features": "7.*",
+                "drupal/field_group": "7.*",
+                "drupal/field_sql_storage": "7.*",
+                "drupal/fieldable_panels_panes": "7.*",
+                "drupal/image": "7.*",
+                "drupal/jquery_update": "7.*",
+                "drupal/libraries": "7.*",
+                "drupal/list": "7.*",
+                "drupal/menu": "7.*",
+                "drupal/page_manager": "7.*",
+                "drupal/panelizer": "7.*",
+                "drupal/panels": "7.*",
+                "drupal/panels_breadcrumbs": "7.*",
+                "drupal/panels_ipe": "7.*",
+                "drupal/pathauto": "7.*",
+                "drupal/pm_existing_pages": "7.*",
+                "drupal/strongarm": "7.*",
+                "drupal/taxonomy": "7.*",
+                "drupal/token": "7.*",
+                "drupal/transliteration": "7.*",
+                "drupal/views": "7.*",
+                "drupal/views_autocomplete_filters": "7.*",
+                "drupal/views_content": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "The magical core of the Panopoly framework.",
+            "homepage": "https://www.drupal.org/project/panopoly_core"
+        },
+        {
+            "name": "drupal/panopoly_images",
+            "version": "7.1.27",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/panopoly_images",
+                "reference": "7d0d38ed2fd70c24c35e4e6407e25ff770c9e801"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/panopoly_images-7.x-1.27.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ctools": "7.*",
+                "drupal/defaultconfig": "7.*",
+                "drupal/drupal": "7.*",
+                "drupal/features": "7.*",
+                "drupal/file_entity": "7.*",
+                "drupal/image": "7.*",
+                "drupal/manualcrop": "7.*",
+                "drupal/media": "7.*",
+                "drupal/strongarm": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Provides scaling and cropping to images.",
+            "homepage": "https://www.drupal.org/project/panopoly_images"
+        },
+        {
+            "name": "drupal/panopoly_magic",
+            "version": "7.1.27",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/panopoly_magic",
+                "reference": "d4d3e22d3c1cbf5a2deceaa1436d85326743d161"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/panopoly_magic-7.x-1.27.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ctools": "7.*",
+                "drupal/drupal": "7.*",
+                "drupal/fape": "7.*",
+                "drupal/features": "7.*",
+                "drupal/page_manager": "7.*",
+                "drupal/panels_ipe": "7.*",
+                "drupal/views": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Weaves together the chaos magic.",
+            "homepage": "https://www.drupal.org/project/panopoly_magic"
+        },
+        {
+            "name": "drupal/panopoly_pages",
+            "version": "7.1.27",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/panopoly_pages",
+                "reference": "f8e38c3a078d08e07ab29f562c83f6e6c0a0b6d0"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/panopoly_pages-7.x-1.27.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ctools": "7.*",
+                "drupal/defaultconfig": "7.*",
+                "drupal/drupal": "7.*",
+                "drupal/features": "7.*",
+                "drupal/image": "7.*",
+                "drupal/list": "7.*",
+                "drupal/menu_block": "7.*",
+                "drupal/options": "7.*",
+                "drupal/page_manager": "7.*",
+                "drupal/panelizer": "7.*",
+                "drupal/panopoly_core": "7.*",
+                "drupal/strongarm": "7.*",
+                "drupal/taxonomy": "7.*",
+                "drupal/text": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Provides a basic page, suitable for Panelizing.",
+            "homepage": "https://www.drupal.org/project/panopoly_pages"
+        },
+        {
+            "name": "drupal/panopoly_search",
+            "version": "7.1.27",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/panopoly_search",
+                "reference": "8337df45b2e4812963e25c4c0dce5e3f0780dcb7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/panopoly_search-7.x-1.27.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*",
+                "drupal/facetapi": "7.*",
+                "drupal/page_manager": "7.*",
+                "drupal/search": "7.*",
+                "drupal/search_api": "7.*",
+                "drupal/search_api_db": "7.*",
+                "drupal/search_api_facetapi": "7.*",
+                "drupal/search_api_solr": "7.*",
+                "drupal/search_api_views": "7.*",
+                "drupal/strongarm": "7.*",
+                "drupal/views": "7.*",
+                "drupal/views_content": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Indexes and searches site content, Solr or otherwise.",
+            "homepage": "https://www.drupal.org/project/panopoly_search"
+        },
+        {
             "name": "drupal/panopoly_theme",
             "version": "7.1.27",
             "source": {
@@ -708,6 +1524,134 @@
             "homepage": "https://www.drupal.org/project/panopoly_theme"
         },
         {
+            "name": "drupal/panopoly_users",
+            "version": "7.1.27",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/panopoly_users",
+                "reference": "7807f7b1b54bdbcf057688a04df5b6b6ccba6e71"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/panopoly_users-7.x-1.27.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ctools": "7.*",
+                "drupal/defaultconfig": "7.*",
+                "drupal/drupal": "7.*",
+                "drupal/features": "7.*",
+                "drupal/field_group": "7.*",
+                "drupal/image": "7.*",
+                "drupal/page_manager": "7.*",
+                "drupal/panelizer": "7.*",
+                "drupal/pm_existing_pages": "7.*",
+                "drupal/strongarm": "7.*",
+                "drupal/user_picture_field": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Maintains user accounts and user workflows.",
+            "homepage": "https://www.drupal.org/project/panopoly_users"
+        },
+        {
+            "name": "drupal/panopoly_widgets",
+            "version": "7.1.27",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/panopoly_widgets",
+                "reference": "8234124605375a9599812d640281c17abf7bb757"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/panopoly_widgets-7.x-1.27.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ctools": "7.*",
+                "drupal/defaultconfig": "7.*",
+                "drupal/drupal": "7.*",
+                "drupal/features": "7.*",
+                "drupal/fieldable_panels_panes": "7.*",
+                "drupal/file": "7.*",
+                "drupal/file_entity": "7.*",
+                "drupal/image": "7.*",
+                "drupal/link": "7.*",
+                "drupal/list": "7.*",
+                "drupal/media": "7.*",
+                "drupal/media_vimeo": "7.*",
+                "drupal/media_youtube": "7.*",
+                "drupal/menu_block": "7.*",
+                "drupal/number": "7.*",
+                "drupal/options": "7.*",
+                "drupal/page_manager": "7.*",
+                "drupal/simple_gmap": "7.*",
+                "drupal/tablefield": "7.*",
+                "drupal/text": "7.*",
+                "drupal/views": "7.*",
+                "drupal/views_autocomplete_filters": "7.*",
+                "drupal/views_content": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Creates generic widget functionality to customize wide and far.",
+            "homepage": "https://www.drupal.org/project/panopoly_widgets"
+        },
+        {
+            "name": "drupal/panopoly_wysiwyg",
+            "version": "7.1.27",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/panopoly_wysiwyg",
+                "reference": "7f5f7d35ebf3ac56bceea583eedda52a37d49777"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/panopoly_wysiwyg-7.x-1.27.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/caption_filter": "7.*",
+                "drupal/ctools": "7.*",
+                "drupal/defaultconfig": "7.*",
+                "drupal/drupal": "7.*",
+                "drupal/features": "7.*",
+                "drupal/filter": "7.*",
+                "drupal/image_resize_filter": "7.*",
+                "drupal/linkit": "7.*",
+                "drupal/media": "7.*",
+                "drupal/media_internet": "7.*",
+                "drupal/media_vimeo": "7.*",
+                "drupal/media_wysiwyg": "7.*",
+                "drupal/media_youtube": "7.*",
+                "drupal/strongarm": "7.*",
+                "drupal/wysiwyg": "7.*",
+                "drupal/wysiwyg_filter": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Integrates a WYSIWYG into Drupal.",
+            "homepage": "https://www.drupal.org/project/panopoly_wysiwyg"
+        },
+        {
             "name": "drupal/pathauto",
             "version": "7.1.3",
             "source": {
@@ -735,6 +1679,33 @@
             "notification-url": "http://packagist.drupal-composer.org/downloads/",
             "description": "Provides a mechanism for modules to automatically generate aliases for the content they manage.",
             "homepage": "https://www.drupal.org/project/pathauto"
+        },
+        {
+            "name": "drupal/pm_existing_pages",
+            "version": "7.1.4",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/pm_existing_pages",
+                "reference": "021cd6a75c67377800ffe8a3ee4b06be5fbf0789"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/pm_existing_pages-7.x-1.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*",
+                "drupal/page_manager": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Provides the ability to override existing pages through Page manager."
         },
         {
             "name": "drupal/radix_layouts",
@@ -791,6 +1762,177 @@
             "description": "A flexible, recolorable theme with many regions and a responsive, mobile-first layout."
         },
         {
+            "name": "drupal/search_api",
+            "version": "7.1.16",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/search_api",
+                "reference": "b85d9b9b4277769bce11ddb20e16acf449980246"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/search_api-7.x-1.16.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*",
+                "drupal/entity": "7.*"
+            },
+            "replace": {
+                "drupal/search_api_facetapi": "self.version",
+                "drupal/search_api_views": "self.version"
+            },
+            "suggest": {
+                "drupal/facetapi": "Required by drupal/search_api_facetapi",
+                "drupal/views": "Required by drupal/search_api_views"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Provides a generic API for modules offering search capabilites.",
+            "homepage": "https://www.drupal.org/project/search_api"
+        },
+        {
+            "name": "drupal/search_api_db",
+            "version": "7.1.5",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/search_api_db",
+                "reference": "7d7a92ce9662448eee859f89dd0e6377265a4a3c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/search_api_db-7.x-1.5.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*",
+                "drupal/search_api": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Offers an implementation of the Search API that uses database tables for indexing content.",
+            "homepage": "https://www.drupal.org/project/search_api_db"
+        },
+        {
+            "name": "drupal/search_api_solr",
+            "version": "7.1.9",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/search_api_solr",
+                "reference": "11f5a50733d14efdff576da7a908c0773537e6c2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/search_api_solr-7.x-1.9.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*",
+                "drupal/search_api": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Offers an implementation of the Search API that uses an Apache Solr server for indexing content.",
+            "homepage": "https://www.drupal.org/project/search_api_solr"
+        },
+        {
+            "name": "drupal/simple_gmap",
+            "version": "7.1.2",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/simple_gmap",
+                "reference": "5988c4a9df41d4158bf89bf2e284a7037de4b0df"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/simple_gmap-7.x-1.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Provides a Google Maps link/map formatter for simple Text fields"
+        },
+        {
+            "name": "drupal/strongarm",
+            "version": "7.2.0",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/strongarm",
+                "reference": "895016eb5b99b9dc3e704f1b56e58808eedce30a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/strongarm-7.x-2.0.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/ctools": "7.*",
+                "drupal/drupal": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-2.x": "7.2.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Enforces variable values defined by modules that need settings set to operate properly."
+        },
+        {
+            "name": "drupal/tablefield",
+            "version": "7.2.4",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/tablefield",
+                "reference": "93675ec9148097a92fe6d4bcc7b0b17b9e2e8698"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/tablefield-7.x-2.4.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-2.x": "7.2.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Defines a generic tablular data field."
+        },
+        {
             "name": "drupal/token",
             "version": "7.1.6",
             "source": {
@@ -817,6 +1959,32 @@
             "description": "Provides a user interface for the Token API and some missing core tokens."
         },
         {
+            "name": "drupal/transliteration",
+            "version": "7.3.2",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/transliteration",
+                "reference": "a4438c88757ed97ea5ada4b762c2db4af19cf919"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/transliteration-7.x-3.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-3.x": "7.3.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Converts non-latin text to US-ASCII and sanitizes file names."
+        },
+        {
             "name": "drupal/tweme",
             "version": "dev-7.x-3.x",
             "source": {
@@ -841,7 +2009,34 @@
             },
             "notification-url": "http://packagist.drupal-composer.org/downloads/",
             "description": "Ultra lightweight Bootstrap theme for Drupal.",
-            "homepage": "https://www.drupal.org/project/tweme"
+            "homepage": "https://www.drupal.org/project/tweme",
+            "time": "2015-09-13 20:50:16"
+        },
+        {
+            "name": "drupal/user_picture_field",
+            "version": "7.1.0-rc1",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/user_picture_field",
+                "reference": "20d8d6642d87caff627694464fe0301176da148a"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/user_picture_field-7.x-1.0-rc1.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "user picture field."
         },
         {
             "name": "drupal/views",
@@ -872,6 +2067,117 @@
             },
             "notification-url": "http://packagist.drupal-composer.org/downloads/",
             "description": "Create customized lists and queries from your database."
+        },
+        {
+            "name": "drupal/views_autocomplete_filters",
+            "version": "7.1.2",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/views_autocomplete_filters",
+                "reference": "5f4b67436d41371e7d9af6574ddae850323df2b1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/views_autocomplete_filters-7.x-1.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*",
+                "drupal/views": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Views Autocomplete Filters"
+        },
+        {
+            "name": "drupal/views_bulk_operations",
+            "version": "7.3.3",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/views_bulk_operations",
+                "reference": "57eea91d94c33e4991484a19cd0ccfafde85b405"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/views_bulk_operations-7.x-3.3.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*",
+                "drupal/entity": "7.*",
+                "drupal/views": "7.*"
+            },
+            "replace": {
+                "drupal/actions_permissions": "self.version"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-3.x": "7.3.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Provides a way of selecting multiple rows and applying operations to them.",
+            "homepage": "https://www.drupal.org/project/views_bulk_operations"
+        },
+        {
+            "name": "drupal/wysiwyg",
+            "version": "7.2.2",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/wysiwyg",
+                "reference": "41693f1db2683a78191b059d22be98300cc9e424"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/wysiwyg-7.x-2.2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-2.x": "7.2.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Allows to edit content with client-side editors."
+        },
+        {
+            "name": "drupal/wysiwyg_filter",
+            "version": "7.1.6-rc2",
+            "source": {
+                "type": "git",
+                "url": "http://git.drupal.org/project/wysiwyg_filter",
+                "reference": "6cbb1f4b37bcd089eb1033b3eb09043adf5b5427"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "http://ftp.drupal.org/files/projects/wysiwyg_filter-7.x-1.6-rc2.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "drupal/drupal": "7.*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-7.x-1.x": "7.1.x-dev"
+                }
+            },
+            "notification-url": "http://packagist.drupal-composer.org/downloads/",
+            "description": "Provides an input filter that allows site administrators configure which HTML elements, attributes and style properties are allowed."
         },
         {
             "name": "pantheon-systems/drops-7",
@@ -2428,16 +3734,16 @@
         },
         {
             "name": "phpunit/phpunit",
-            "version": "4.8.11",
+            "version": "4.8.12",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/phpunit.git",
-                "reference": "bdd199472410fd7e32751f9c814c7e06f2c21bd5"
+                "reference": "00194eb95989190a73198390ceca081ad3441a7f"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/bdd199472410fd7e32751f9c814c7e06f2c21bd5",
-                "reference": "bdd199472410fd7e32751f9c814c7e06f2c21bd5",
+                "url": "https://api.github.com/repos/sebastianbergmann/phpunit/zipball/00194eb95989190a73198390ceca081ad3441a7f",
+                "reference": "00194eb95989190a73198390ceca081ad3441a7f",
                 "shasum": ""
             },
             "require": {
@@ -2496,7 +3802,7 @@
                 "testing",
                 "xunit"
             ],
-            "time": "2015-10-07 10:39:46"
+            "time": "2015-10-12 03:36:47"
         },
         {
             "name": "phpunit/phpunit-mock-objects",
@@ -2837,16 +4143,16 @@
         },
         {
             "name": "sebastian/global-state",
-            "version": "1.1.0",
+            "version": "1.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sebastianbergmann/global-state.git",
-                "reference": "23af31f402993cfd94e99cbc4b782e9a78eb0e97"
+                "reference": "bc37d50fea7d017d3d340f230811c9f1d7280af4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/23af31f402993cfd94e99cbc4b782e9a78eb0e97",
-                "reference": "23af31f402993cfd94e99cbc4b782e9a78eb0e97",
+                "url": "https://api.github.com/repos/sebastianbergmann/global-state/zipball/bc37d50fea7d017d3d340f230811c9f1d7280af4",
+                "reference": "bc37d50fea7d017d3d340f230811c9f1d7280af4",
                 "shasum": ""
             },
             "require": {
@@ -2884,7 +4190,7 @@
             "keywords": [
                 "global state"
             ],
-            "time": "2015-06-21 15:11:22"
+            "time": "2015-10-12 03:26:01"
         },
         {
             "name": "sebastian/recursion-context",

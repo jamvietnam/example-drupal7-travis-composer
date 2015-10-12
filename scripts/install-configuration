@@ -14,3 +14,13 @@ cd "$DRUPAL_ROOT"
 # Install the configuration settings form wk_config
 #
 #drush "$SITE_IDENTIFIER" cb-umaster MODULENAME -y
+
+#
+# Run the Panopoly make files
+#
+PANOPOLY_MODULES="panopoly_admin panopoly_core panopoly_images panopoly_magic panopoly_theme panopoly_users panopoly_widgets panopoly_pages panopoly_search panopoly_wysiwyg"
+for module in $PANOPOLY_MODULES; do
+  if test -e sites/all/modules/panopoly/$module/$module.make; then
+    drush make --no-core -y sites/all/modules/panopoly/$module/$module.make;
+  fi
+done

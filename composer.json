@@ -100,7 +100,16 @@
         "drupal/tweme": "7.3.x-dev",
         "drupal/kalatheme": "7.4.x-dev",
         "drupal/panels": "7.*",
-        "drupal/panopoly_theme": "7.x"
+        "drupal/panopoly_admin": "7.x",
+		"drupal/panopoly_core": "7.x",
+		"drupal/panopoly_images": "7.x",
+		"drupal/panopoly_magic": "7.x",
+		"drupal/panopoly_theme": "7.x",
+		"drupal/panopoly_users": "7.x",
+		"drupal/panopoly_widgets": "7.x",
+		"drupal/panopoly_pages": "7.x",
+		"drupal/panopoly_search": "7.x",
+		"drupal/panopoly_wysiwyg": "7.x"
     },
     "require-dev": {
         "pantheon-systems/travis-scripts": "*"
