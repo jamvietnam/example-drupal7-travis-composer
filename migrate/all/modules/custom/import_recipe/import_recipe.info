@@ -1,0 +1,4 @@
+name = JAM - Migrate Recipes
+description = Import recipes from old site ( PRODUCTION ) to database
+core = 7.x
+version = 7.x-1.0

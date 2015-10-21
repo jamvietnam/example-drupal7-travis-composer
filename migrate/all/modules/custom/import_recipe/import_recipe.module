@@ -1,0 +1,345 @@
+<?php
+
+require_once 'Parsedown.php';
+
+function import_recipe_menu() {
+    $items = array();
+
+    $items['admin/migrate-recipes'] = array( //this creates a URL that will call this form at "examples/form-example"
+        'title' => 'Migrate Recipes', //page title
+        'description' => 'A form to submit migrate database.',
+        'page callback' => 'drupal_get_form', //this is the function that will be called when the page is accessed.  for a form, use drupal_get_form
+        'page arguments' => array('import_recipe_form'), //put the name of the form here
+        'access callback' => TRUE
+    );
+
+    /*
+    $items['admin/convert-md-html-instruction'] = array(
+        'title' => 'Convert MD HTML',
+        'description' => 'Convert Database and import to database',
+        'page callback' => 'convert_md_html',
+        'access callback' => TRUE
+    );
+
+    $items['admin/convert-md-html-tips'] = array(
+        'title' => 'Convert MD HTML Tips',
+        'description' => 'Convert md html tips',
+        'page callback' => 'convert_md_html_tips',
+        'access callback' => TRUE
+    );*/
+
+    return $items;
+}
+
+function import_recipe_form($form, &$form_state) {
+
+    $form['submit_button'] = array(
+        '#type' => 'submit',
+        '#value' => t('Click Here to start Migrate!'),
+    );
+
+    return $form;
+}
+
+function import_recipe_form_validate($form, &$form_state) {
+}
+
+function import_recipe_form_submit($form, &$form_state) {
+
+    //process import recipe
+
+    //step1: get all recipes from table jam_recipes
+
+    $recipes = db_query('
+        SELECT * FROM {jam_recipes}
+        WHERE status =  1
+        AND user_id = 3
+        ORDER BY created_at ASC
+
+    ');
+
+    $i = 1;
+
+    //step2: import database
+    foreach($recipes as $row)
+    {
+
+        // collect data
+        $data = array(
+            'id' => $row->id,
+            'title' => $row->name,
+            'description' => trim(strip_tags(html_entity_decode($row->description))),
+            'instruction' => $row->instruction,
+            'tips' => $row->cooking_tips,
+            'image' => $row->image,
+        );
+
+        $ingredients = db_query('
+            SELECT t.name,ir.quantity FROM {jam_ingredients} t
+            INNER JOIN {jam_recipes_ingredients} ir
+            ON ir.ingredient_id = t.id
+            WHERE ir.recipe_id = :recipe_id
+        ',array(':recipe_id' => $row->id));
+
+        foreach($ingredients as $r)
+        {
+            $data['ingredients'][] = array(
+                'name' => $r->name,
+                'quantity' => $r->quantity
+            );
+        }
+
+        //get category name
+        $category = db_select('jam_categories','z')
+            ->fields('z',array('name'))
+            ->condition('id',$row->category_id)
+            ->range(0,1)
+            ->execute();
+
+        $_category = '';
+        if($category->rowCount())
+        {
+            $category = $category->fetchObject();
+            $_category = $category->name;
+        }
+        $data['category'] = $_category;
+
+        //step2: check recipe have been migrated
+        $query = db_select('jam_migrate_refer', 'z')
+            ->fields('z', array('id'))
+            ->condition('old_nid',$row->id)
+            ->range(0, 1)
+            ->execute();
+
+
+        // step2: insert new node
+        if(!$query->rowCount())
+        {
+           _create_node($data);
+        }
+    }
+
+    drupal_set_message(t('Import successful. Please check again database!'));
+
+}
+
+
+//---------------------- PRIVATE FUNCTION
+function _create_node($data)
+{
+    $node  = new StdClass();
+    $node->type = 'recipe';
+    $node->language = LANGUAGE_NONE;
+    node_object_prepare($node);
+
+    $node->title = $data['title'];
+
+    //update status publish
+    $node->status = 1;
+    $node->promote = 0 ;
+    $node->sticky = 0 ;
+    $node->comment = 2; //2 = comments open
+
+    //add author of the recipe default MAGGI VIETNAM
+    $node->uid = 1;
+
+    //insert description
+    $node->body[$node->language][0]['value'] = $data['description'];
+    $node->body[$node->language][0]['summary'] = text_summary($data['description']);
+    $node->body[$node->language][0]['format'] = 'panopoly_html_text'; // format related with format in your DRUPAL
+
+    //insert instruction
+    $node->field_directions[LANGUAGE_NONE][0]['value'] = $data['instruction'];
+    $node->field_directions[LANGUAGE_NONE][0]['format'] = 'panopoly_html_text'; // format  related with format in your DRUPAL
+
+    //insert hot tips
+    $node->field_hot_tips[LANGUAGE_NONE][0]['value'] = $data['tips'];
+    $node->field_hot_tips[LANGUAGE_NONE][0]['format'] = 'panopoly_html_text';
+
+    //default pep time
+    $node->field_prep_time = array();
+
+    //insert field collection
+    if(isset($data['ingredients']))
+    {
+        foreach($data['ingredients'] as $_r)
+        {
+            $fc_item = entity_create('field_collection_item', array('field_name' => 'field_ingredients_collection'));
+            $fc_item->setHostEntity('node',$node);
+            $fc_wrapper = entity_metadata_wrapper('field_collection_item', $fc_item);
+
+            $fc_wrapper->field_ingredient=($_r['name']);
+            $fc_wrapper->field_quantity=t($_r['quantity']);
+            $fc_wrapper->save(TRUE);
+        }
+    }
+    //----- end insert field collection
+
+    //update images
+    $node->field_image[LANGUAGE_NONE][0] = (array) _add_images($data['image']);
+
+    // get all term id of vocalbulary
+    // update term id to node
+    $vocabulary = 'recipes_categories ';
+    $vid = taxonomy_vocabulary_machine_name_load($vocabulary);
+    $tids = taxonomy_get_tree($vid->vid);
+    $_tid = 0;
+    foreach($tids as $tid)
+    {
+        if(trim($tid->name) == $data['category'])
+        {
+            $_tid = $tid->tid;
+        }
+    }
+
+    if($_tid > 0 )
+    {
+        $node->field_category[LANGUAGE_NONE][0]['tid'] = $_tid;
+    }
+    //----------
+
+    //save node
+    node_save($node);
+
+    //insert to table migrate refer then we will update field later
+    db_query('
+        INSERT INTO {jam_migrate_refer} (`nid`,`old_nid`)
+        VALUES(:nid,:old_nid)
+    ',array(
+        ':nid' => $node->nid,
+        ':old_nid' => $data['id']
+    ));
+
+}
+
+function _add_images($image)
+{
+    $file = new StdClass();
+    $file->uid = 1;
+    $file->uri = DRUPAL_ROOT.'/sites/behat/files/recipes/'.$image;
+    $file->filemime = file_get_mimetype($file->uri);
+    $file->status = 1;
+    $file->display = 1;
+    $file->description = "";
+    $dest = file_default_scheme() . '://recipeupload';
+    $file = file_copy($file, $dest);
+
+    return $file;
+}
+
+//---------------------- PRIVATE FUNCTION
+
+// convert markdown to html and import to databse
+function convert_md_html()
+{
+    //scan all file in dir
+    $directory = '/var/www/html/maggi-drupal.com/markdown/recipes/';
+    $scanned_directory = array_diff(scandir($directory), array('..', '.'));
+
+    $result = array();
+    $Parsedown = new Parsedown();
+    foreach($scanned_directory as $row)
+    {
+        // get old recipe id
+        $nid = preg_split('/_/',str_replace('.md','',$row));
+
+        $content = file_get_contents($directory.$row);
+        $content_parsed = $Parsedown->text($content);
+
+        $regex = '#<(?P<tags>(?i)|ul|ol)>(?P<values>.*?)</\1>#si';
+        preg_match_all($regex,$content_parsed,$output);
+
+        for ($i = 0, $t = count($output['tags']); $i < $t; $i++) {
+            $out[$output['tags'][$i]][] = $output['values'][$i];
+        }
+        $output = array_intersect_key($output, array('tags' => 0, 'values' => 0));
+
+        if(!isset($output['values'][0]))
+        {
+            echo $row;
+        }
+        else
+        {
+            $output = '<ol>'.preg_replace('/<p>|<\/p>/','',$output['values'][0]).'</ol>';
+            $query = '
+                UPDATE {jam_recipes}
+                SET instruction = :value
+                WHERE id = :id
+            ';
+            db_query($query,array(
+                ':value' => $output,
+                ':id' => $nid[1]
+            ));
+        }
+
+
+        //update to database field instruction
+        $result[$nid[1]] = $output;
+
+
+
+    }
+
+    echo '<pre>';
+    print_r($result);
+
+    //drupal_set_message('Update successful');
+
+}
+
+// convert markdown to html tips and import to database
+function convert_md_html_tips()
+{
+    $directory = '/var/www/html/maggi-drupal.com/markdown/tips/';
+    $scanned_directory = array_diff(scandir($directory), array('..', '.'));
+
+    $result = array();
+    $Parsedown = new Parsedown();
+    foreach($scanned_directory as $row)
+    {
+        // get old recipe id
+        $nid = preg_split('/_/',str_replace('.md','',$row));
+
+        $content = file_get_contents($directory.$row);
+        $content_parsed = $Parsedown->text($content);
+
+
+
+
+        $regex = '#<(?P<tags>(?i)|ul|ol)>(?P<values>.*?)</\1>#si';
+        preg_match_all($regex,$content_parsed,$output);
+
+        for ($i = 0, $t = count($output['tags']); $i < $t; $i++) {
+            $out[$output['tags'][$i]][] = $output['values'][$i];
+        }
+        $output = array_intersect_key($output, array('tags' => 0, 'values' => 0));
+
+        if(!isset($output['values'][0]))
+        {
+            echo $row;
+        }
+        else
+        {
+            $output = '<ul>'.preg_replace('/<p>|<\/p>/','',$output['values'][0]).'</ul>';
+            $query = '
+                UPDATE {jam_recipes}
+                SET cooking_tips = :value
+                WHERE id = :id
+            ';
+            db_query($query,array(
+                ':value' => $output,
+                ':id' => $nid[1]
+            ));
+        }
+
+
+        //update to database field instruction
+        $result[$nid[1]] = $output;
+
+
+
+    }
+
+    echo '<pre>';
+    print_r($result);
+}
